@@ -1,10 +1,15 @@
-//
-//  AppDelegate.swift
-//  PassForYou
-//
-//  Created by mtkj on 2017/5/9.
-//  Copyright © 2017年 mtkj. All rights reserved.
-//
+/*********************************************************************************
+ * 版权所有,2017,lisir.
+ * Copyright(C),lisir, LTD.All rights reserved.
+ * project:
+ * Author:lisir
+ * Date:  17/05/09
+ * QQ/Tel/Mail:
+ * Description:appdelegate
+ * Others:
+ * Modifier:
+ * Reason:
+ **********************************************************************************/
 
 import UIKit
 import CoreData
@@ -17,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+//        Book *newBook = (Book *)[NSEntityDescription insertNewObjectForEntityForName:@"Book" inManagedObjectContext:addingContext];
+//        let key = NSEntityDescription.insertNewObject(forEntityName: "AppKey", into: persistentContainer.viewContext)
+//        AppKey.deleteAll(className: AppKey.classForCoder(), sortKey: "openid")
         return true
     }
 

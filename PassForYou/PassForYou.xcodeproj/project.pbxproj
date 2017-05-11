@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C2359EB31EC2B1E1009191BD /* PwNumberLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2359EB21EC2B1E1009191BD /* PwNumberLayout.swift */; };
+		C2359EB61EC2C15D009191BD /* PwNumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2359EB41EC2C15D009191BD /* PwNumberCell.swift */; };
+		C2359EB71EC2C15D009191BD /* PwNumberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2359EB51EC2C15D009191BD /* PwNumberCell.xib */; };
 		C24B3EFD1EC16A1C00008F1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24B3EFC1EC16A1C00008F1C /* AppDelegate.swift */; };
 		C24B3F021EC16A1C00008F1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C24B3F001EC16A1C00008F1C /* Main.storyboard */; };
 		C24B3F051EC16A1C00008F1C /* PassForYou.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C24B3F031EC16A1C00008F1C /* PassForYou.xcdatamodeld */; };
@@ -21,6 +23,10 @@
 		C24B3F331EC18B8B00008F1C /* PwMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24B3F321EC18B8B00008F1C /* PwMainController.swift */; };
 		C24B3F361EC18C4800008F1C /* PwPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24B3F341EC18C4800008F1C /* PwPasswordController.swift */; };
 		C24B3F371EC18C4800008F1C /* PwPasswordController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C24B3F351EC18C4800008F1C /* PwPasswordController.xib */; };
+		C2D4B2381EC439C40028EA3E /* AppKey+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D4B2361EC439C40028EA3E /* AppKey+CoreDataClass.swift */; };
+		C2D4B2391EC439C40028EA3E /* AppKey+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D4B2371EC439C40028EA3E /* AppKey+CoreDataProperties.swift */; };
+		C2D4B23B1EC43A450028EA3E /* DataBaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D4B23A1EC43A450028EA3E /* DataBaseProtocol.swift */; };
+		C2D4B24C1EC457A90028EA3E /* ExtensionCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D4B24B1EC457A90028EA3E /* ExtensionCoreData.swift */; };
 		C45B853093D29AFC40E026F8 /* Pods_PassForYou.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76794AF04DC9B3540017FC4F /* Pods_PassForYou.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +35,8 @@
 		76794AF04DC9B3540017FC4F /* Pods_PassForYou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PassForYou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ABEB43BD970A4132E37AAC1 /* Pods-PassForYou.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassForYou.release.xcconfig"; path = "Pods/Target Support Files/Pods-PassForYou/Pods-PassForYou.release.xcconfig"; sourceTree = "<group>"; };
 		C2359EB21EC2B1E1009191BD /* PwNumberLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PwNumberLayout.swift; sourceTree = "<group>"; };
+		C2359EB41EC2C15D009191BD /* PwNumberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PwNumberCell.swift; sourceTree = "<group>"; };
+		C2359EB51EC2C15D009191BD /* PwNumberCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PwNumberCell.xib; sourceTree = "<group>"; };
 		C24B3EF91EC16A1C00008F1C /* PassForYou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PassForYou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C24B3EFC1EC16A1C00008F1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C24B3F011EC16A1C00008F1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -44,6 +52,10 @@
 		C24B3F321EC18B8B00008F1C /* PwMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PwMainController.swift; sourceTree = "<group>"; };
 		C24B3F341EC18C4800008F1C /* PwPasswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PwPasswordController.swift; sourceTree = "<group>"; };
 		C24B3F351EC18C4800008F1C /* PwPasswordController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PwPasswordController.xib; sourceTree = "<group>"; };
+		C2D4B2361EC439C40028EA3E /* AppKey+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppKey+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C2D4B2371EC439C40028EA3E /* AppKey+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppKey+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C2D4B23A1EC43A450028EA3E /* DataBaseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataBaseProtocol.swift; sourceTree = "<group>"; };
+		C2D4B24B1EC457A90028EA3E /* ExtensionCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionCoreData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +169,10 @@
 		C24B3F301EC18B2F00008F1C /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				C2D4B2361EC439C40028EA3E /* AppKey+CoreDataClass.swift */,
+				C2D4B2371EC439C40028EA3E /* AppKey+CoreDataProperties.swift */,
+				C2D4B23A1EC43A450028EA3E /* DataBaseProtocol.swift */,
+				C2D4B24B1EC457A90028EA3E /* ExtensionCoreData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -167,6 +183,8 @@
 				C24B3F341EC18C4800008F1C /* PwPasswordController.swift */,
 				C24B3F351EC18C4800008F1C /* PwPasswordController.xib */,
 				C2359EB21EC2B1E1009191BD /* PwNumberLayout.swift */,
+				C2359EB41EC2C15D009191BD /* PwNumberCell.swift */,
+				C2359EB51EC2C15D009191BD /* PwNumberCell.xib */,
 			);
 			path = Password;
 			sourceTree = "<group>";
@@ -235,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2359EB71EC2C15D009191BD /* PwNumberCell.xib in Resources */,
 				C24B3F0A1EC16A1C00008F1C /* LaunchScreen.storyboard in Resources */,
 				C24B3F071EC16A1C00008F1C /* Assets.xcassets in Resources */,
 				C24B3F021EC16A1C00008F1C /* Main.storyboard in Resources */,
@@ -297,16 +316,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2359EB61EC2C15D009191BD /* PwNumberCell.swift in Sources */,
 				C24B3F051EC16A1C00008F1C /* PassForYou.xcdatamodeld in Sources */,
 				C2359EB31EC2B1E1009191BD /* PwNumberLayout.swift in Sources */,
 				C24B3F331EC18B8B00008F1C /* PwMainController.swift in Sources */,
 				C24B3EFD1EC16A1C00008F1C /* AppDelegate.swift in Sources */,
 				C24B3F2A1EC1888D00008F1C /* BaseTableViewController.swift in Sources */,
+				C2D4B23B1EC43A450028EA3E /* DataBaseProtocol.swift in Sources */,
+				C2D4B2391EC439C40028EA3E /* AppKey+CoreDataProperties.swift in Sources */,
 				C24B3F261EC1887100008F1C /* BaseViewController.swift in Sources */,
 				C24B3F281EC1887F00008F1C /* BaseCollectionViewController.swift in Sources */,
 				C24B3F2E1EC188BD00008F1C /* BaseNavigationViewController.swift in Sources */,
+				C2D4B24C1EC457A90028EA3E /* ExtensionCoreData.swift in Sources */,
 				C24B3F361EC18C4800008F1C /* PwPasswordController.swift in Sources */,
 				C24B3F2C1EC188A000008F1C /* BaseTabBarViewController.swift in Sources */,
+				C2D4B2381EC439C40028EA3E /* AppKey+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
