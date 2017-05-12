@@ -18,13 +18,13 @@ extension NSManagedObject:DBProtocol {
     
     //MARK:创建entity
     class func createEntity(name:String)->NSManagedObject?{
-        guard let context = returnContext() else { return nil};
+        guard let context = returnContext() else { assertionFailure("context 为 空");return nil};
         let entity = NSEntityDescription.insertNewObject(forEntityName: name, into: context)
         return entity;
     }
     //MARK:删除所有这个类所有元素
     static func deleteAll(className name:AnyClass,sortKey key:String){
-        guard let context = returnContext() else { return  };
+        guard let context = returnContext() else { assertionFailure("context 为 空");return  };
         if let list = fetchNSManagedObject(className: name, sortKey: key){
             for item in list {
                 if let tObject = item as? NSManagedObject {
@@ -36,17 +36,15 @@ extension NSManagedObject:DBProtocol {
     }
     
     //MARK:删除单个
-    static func delete(object:DBProtocol){
-        guard let context = returnContext() else {return};
-        if let t = object as? NSManagedObject {
-            context.delete(t)
+    static func delete(object:NSManagedObject){
+        guard let context = returnContext() else {assertionFailure("context 为 空");return};
+            context.delete(object)
             coreDataSave();
-        }
     }
     
     //MARK:查询
-    static func fetchNSManagedObject(className name:AnyClass,sortKey key:String)->Array<DBProtocol>?{
-        guard let context = returnContext() else { return nil };
+    static func fetchNSManagedObject(className name:AnyClass,sortKey key:String)->Array<NSFetchRequestResult>?{
+        guard let context = returnContext() else { assertionFailure("context 为 空");return nil };
         let tName = NSStringFromClass(name)
         let request = NSFetchRequest<NSFetchRequestResult>.init(entityName:tName);
         let sort = NSSortDescriptor.init(key: key, ascending: true)
@@ -54,7 +52,7 @@ extension NSManagedObject:DBProtocol {
         let fetchController = NSFetchedResultsController.init(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         do {
             try fetchController.performFetch();
-            return fetchController.fetchedObjects as? Array<DBProtocol>
+            return fetchController.fetchedObjects
         } catch {
             assertionFailure("fetch错误=\(error)")
             return nil;
@@ -74,7 +72,7 @@ extension NSManagedObject:DBProtocol {
     }
     
     //MARK:插入
-    static func insert(object:DBProtocol){
+    static func insert(object:NSManagedObject){
         coreDataSave();
     }
     
