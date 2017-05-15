@@ -78,7 +78,7 @@ class PwNumberLayout: UICollectionViewFlowLayout {
     }
     
     override var collectionViewContentSize: CGSize {
-        return CGSize.init(width: 0, height: itemY + 64.0)
+        return CGSize.init(width: 0, height: itemY)
     }
 
 

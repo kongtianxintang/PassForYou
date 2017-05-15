@@ -18,7 +18,6 @@ class PwNumberCell: UICollectionViewCell {
     @IBOutlet weak var label: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
 
     override func draw(_ rect: CGRect) {
@@ -31,9 +30,9 @@ class PwNumberCell: UICollectionViewCell {
         let path = UIBezierPath.init(arcCenter: point, radius: minN / 2.0, startAngle: 0, endAngle:CGFloat( 2.0 * M_PI), clockwise: false)
         shape.path = path.cgPath
         shape.fillColor = UIColor.clear.cgColor
-        shape.strokeColor = UIColor.green.cgColor
+        shape.strokeColor = UIColor.lightGray.cgColor
         shape.lineWidth = 2.0;
-        shape.opacity = 1;
+        shape.opacity = 0.5;
         label.layer.addSublayer(shape)
     }
     

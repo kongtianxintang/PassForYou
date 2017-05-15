@@ -18,7 +18,8 @@ class PwPasswordController: BaseViewController ,UICollectionViewDelegate,UIColle
     @IBOutlet weak var collectionview: UICollectionView!
     @IBOutlet weak var touchIcon: UIImageView!
     @IBOutlet weak var segmented: UISegmentedControl!
-    
+    @IBOutlet weak var secureView: PwSecureView!
+    @IBOutlet weak var descLabel: UILabel!
     
     //MARK:随机摆放 0-9 数据量太大不能用次方法
     private lazy var numbers : [Int] = {
@@ -39,11 +40,21 @@ class PwPasswordController: BaseViewController ,UICollectionViewDelegate,UIColle
     override func viewDidLoad() {
         super.viewDidLoad()
         configCollectionview();
-        
+        defaultData();
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    //MARK:默认数据
+    private func defaultData(){
+        let keys = AppKey.fetchNSManagedObject(className: AppKey.classForCoder(), sortKey: "openid")
+        if keys != nil,keys!.count > 0 {
+            descLabel.text = "请输入密码"
+            return;
+        };
+        descLabel.text = "输入4位数作为开启程序的密码"
     }
     
     //MARK:collectionview相关
@@ -55,7 +66,6 @@ class PwPasswordController: BaseViewController ,UICollectionViewDelegate,UIColle
         animation.toValue = 0.0;
         animation.fromValue = 1;
         animation.duration = 1.0;
-        animation.isCumulative = true;
         collectionview.layer.add(animation, forKey: nil)
     }
     
@@ -70,10 +80,40 @@ class PwPasswordController: BaseViewController ,UICollectionViewDelegate,UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseId, for: indexPath) as! PwNumberCell;
         let info = numbers[indexPath.row]
-        cell.label.text = "\(info)";
+        let text = "\(info)"
+        cell.label.text = text;
         return cell;
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let info = numbers[indexPath.row]
+        let str = "\(info)"
+        let text = secureView.secureStr;
+        if nil == text {   secureView.secureStr = str ; return; };
+        let temp = text! + str;
+        if temp.characters.count > secureView.limit { return; }
+        secureView.secureStr = temp;
+        
+        if temp.characters.count == secureView.limit {
+            
+            //MARK:与本地的key对比是否相等
+            let keys = AppKey.fetchNSManagedObject(className: AppKey.classForCoder(), sortKey: "openid")
+            if nil == keys {  insertAppKey(key: temp) ;return };
+            if keys!.count <= 0 {   insertAppKey(key: temp) ;return };
+            let key = keys![0] as! AppKey
+            if nil == key.openid { return };
+            if temp == key.openid! {
+                print("相等")
+            }else{
+                print("不相等")
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.05, execute: {[unowned self] _ in
+                    self.descLabel.text = "再试一次";
+                    self.secureView.shake();
+                    self.secureView.reClearAll();
+                })
+            }
+        }
+    }
     
     //MARK:UISegmentedControl相关
     @IBAction func didClickSegmentedControl(_ sender: UISegmentedControl) {
@@ -89,10 +129,14 @@ class PwPasswordController: BaseViewController ,UICollectionViewDelegate,UIColle
     private func hidenTouchIcon(){
         touchIcon.isHidden = true;
         collectionview.isHidden = false;
+        descLabel.isHidden = false;
+        secureView.isHidden = false;
     }
     private func hidenCollectionView(){
         collectionview.isHidden = true;
         touchIcon.isHidden = false;
+        descLabel.isHidden = true;
+        secureView.isHidden = true;
         requestLocalAuthentication();
     }
     
@@ -140,6 +184,17 @@ class PwPasswordController: BaseViewController ,UICollectionViewDelegate,UIColle
             }
         }
     }
+    
+    //MARK:插入个钥匙 key
+    private func insertAppKey(key:String){
+        if let entity = AppKey.createEntity(className: AppKey.classForCoder()) as? AppKey {
+            entity.openid = key;
+            AppKey.insert(object: entity)
+        }else{
+            assertionFailure("创建APPkey失败")
+        }
+    }
+    
     
     
     

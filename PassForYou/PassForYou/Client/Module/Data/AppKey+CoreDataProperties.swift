@@ -22,4 +22,7 @@ extension AppKey {
 
     @NSManaged public var openid: String?
 
+    public override func awakeFromInsert() {
+        openid = "test";
+    }
 }

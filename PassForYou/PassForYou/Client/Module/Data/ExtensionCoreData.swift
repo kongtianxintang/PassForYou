@@ -17,9 +17,9 @@ import CoreData
 extension NSManagedObject:DBProtocol {
     
     //MARK:创建entity
-    class func createEntity(name:String)->NSManagedObject?{
+    final class func createEntity(className name:AnyClass)->NSManagedObject?{
         guard let context = returnContext() else { assertionFailure("context 为 空");return nil};
-        let entity = NSEntityDescription.insertNewObject(forEntityName: name, into: context)
+        let entity = NSEntityDescription.insertNewObject(forEntityName: NSStringFromClass(name), into: context)
         return entity;
     }
     //MARK:删除所有这个类所有元素

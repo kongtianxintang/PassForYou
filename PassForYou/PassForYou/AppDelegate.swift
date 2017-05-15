@@ -22,9 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-//        Book *newBook = (Book *)[NSEntityDescription insertNewObjectForEntityForName:@"Book" inManagedObjectContext:addingContext];
-//        let key = NSEntityDescription.insertNewObject(forEntityName: "AppKey", into: persistentContainer.viewContext)
-//        AppKey.deleteAll(className: AppKey.classForCoder(), sortKey: "openid")
         return true
     }
 
