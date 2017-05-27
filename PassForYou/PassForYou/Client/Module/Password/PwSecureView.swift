@@ -68,7 +68,7 @@ class PwSecureView: UIView {
             let width = item.bounds.width;
             let height = item.bounds.height;
             let point = CGPoint.init(x: width / 2.0, y: height / 2.0)
-            let path = UIBezierPath.init(arcCenter: point, radius: 5.0, startAngle: 0, endAngle: CGFloat(2.0 * M_PI), clockwise: true)
+            let path = UIBezierPath.init(arcCenter: point, radius: 5.0, startAngle: 0, endAngle: CGFloat(2.0 * .pi), clockwise: true)
             let shape = CAShapeLayer();
             shape.path = path.cgPath;
             shape.fillColor = UIColor.clear.cgColor;

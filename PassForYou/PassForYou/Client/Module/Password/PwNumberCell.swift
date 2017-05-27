@@ -27,7 +27,7 @@ class PwNumberCell: UICollectionViewCell {
         let midY = label.frame.height / 2.0;
         let point = CGPoint.init(x: midX, y: midY)
         let shape = CAShapeLayer()
-        let path = UIBezierPath.init(arcCenter: point, radius: minN / 2.0, startAngle: 0, endAngle:CGFloat( 2.0 * M_PI), clockwise: false)
+        let path = UIBezierPath.init(arcCenter: point, radius: minN / 2.0, startAngle: 0, endAngle:CGFloat( 2.0 * .pi), clockwise: false)
         shape.path = path.cgPath
         shape.fillColor = UIColor.clear.cgColor
         shape.strokeColor = UIColor.lightGray.cgColor

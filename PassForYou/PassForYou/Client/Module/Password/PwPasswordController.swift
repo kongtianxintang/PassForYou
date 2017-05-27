@@ -104,6 +104,7 @@ class PwPasswordController: BaseViewController ,UICollectionViewDelegate,UIColle
             if nil == key.openid { return };
             if temp == key.openid! {
                 print("相等")
+                PwDisplayManager.shared.displayMain();
             }else{
                 print("不相等")
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.05, execute: {[unowned self] _ in
@@ -154,8 +155,8 @@ class PwPasswordController: BaseViewController ,UICollectionViewDelegate,UIColle
         if isCan {
             context.evaluatePolicy(LAPolicy.deviceOwnerAuthentication, localizedReason: desc, reply: { (success:Bool, err:Error?) in
                 if success {
-                    //TODO:验证成功
-                    print("验证成功")
+                    //MARK:验证成功
+                    PwDisplayManager.shared.displayMain();
                 }else{
                     if let laError = err as? LAError {
                         let errorCode = laError.code

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C21D0AA11ED92A3200A6D900 /* PwDisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D0AA01ED92A3200A6D900 /* PwDisplayManager.swift */; };
 		C2359EB31EC2B1E1009191BD /* PwNumberLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2359EB21EC2B1E1009191BD /* PwNumberLayout.swift */; };
 		C2359EB61EC2C15D009191BD /* PwNumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2359EB41EC2C15D009191BD /* PwNumberCell.swift */; };
 		C2359EB71EC2C15D009191BD /* PwNumberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2359EB51EC2C15D009191BD /* PwNumberCell.xib */; };
@@ -35,6 +36,7 @@
 		2E8EA76DC2F621130BF39B00 /* Pods-PassForYou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassForYou.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PassForYou/Pods-PassForYou.debug.xcconfig"; sourceTree = "<group>"; };
 		76794AF04DC9B3540017FC4F /* Pods_PassForYou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PassForYou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ABEB43BD970A4132E37AAC1 /* Pods-PassForYou.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassForYou.release.xcconfig"; path = "Pods/Target Support Files/Pods-PassForYou/Pods-PassForYou.release.xcconfig"; sourceTree = "<group>"; };
+		C21D0AA01ED92A3200A6D900 /* PwDisplayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PwDisplayManager.swift; sourceTree = "<group>"; };
 		C2359EB21EC2B1E1009191BD /* PwNumberLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PwNumberLayout.swift; sourceTree = "<group>"; };
 		C2359EB41EC2C15D009191BD /* PwNumberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PwNumberCell.swift; sourceTree = "<group>"; };
 		C2359EB51EC2C15D009191BD /* PwNumberCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PwNumberCell.xib; sourceTree = "<group>"; };
@@ -89,6 +91,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C21D0A9E1ED92A1D00A6D900 /* Units */ = {
+			isa = PBXGroup;
+			children = (
+				C21D0A9F1ED92A1D00A6D900 /* Manager */,
+			);
+			path = Units;
+			sourceTree = "<group>";
+		};
+		C21D0A9F1ED92A1D00A6D900 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				C21D0AA01ED92A3200A6D900 /* PwDisplayManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		C24B3EF01EC16A1C00008F1C = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +158,7 @@
 		C24B3F231EC1882A00008F1C /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				C21D0A9E1ED92A1D00A6D900 /* Units */,
 				C24B3F2F1EC18B2F00008F1C /* Main */,
 				C24B3F301EC18B2F00008F1C /* Data */,
 				C24B3F311EC18B2F00008F1C /* Password */,
@@ -325,6 +344,7 @@
 				C24B3F331EC18B8B00008F1C /* PwMainController.swift in Sources */,
 				C24B3EFD1EC16A1C00008F1C /* AppDelegate.swift in Sources */,
 				C24B3F2A1EC1888D00008F1C /* BaseTableViewController.swift in Sources */,
+				C21D0AA11ED92A3200A6D900 /* PwDisplayManager.swift in Sources */,
 				C2D4B24E1EC57EC30028EA3E /* PwSecureView.swift in Sources */,
 				C2D4B23B1EC43A450028EA3E /* DataBaseProtocol.swift in Sources */,
 				C2D4B2391EC439C40028EA3E /* AppKey+CoreDataProperties.swift in Sources */,
@@ -458,6 +478,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LKFND4C422;
 				INFOPLIST_FILE = PassForYou/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mtkj.PassForYou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -472,6 +493,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LKFND4C422;
 				INFOPLIST_FILE = PassForYou/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mtkj.PassForYou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
