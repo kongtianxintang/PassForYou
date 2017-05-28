@@ -28,10 +28,14 @@ class BaseViewController: UIViewController {
         automaticallyAdjustsScrollViewInsets = false;
     }
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-
+    deinit {
+        #if DEBUG
+            debugPrint("deinit \(self.classForCoder)")
+        #else
+        #endif
+    }
 }

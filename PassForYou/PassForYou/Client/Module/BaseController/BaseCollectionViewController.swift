@@ -95,5 +95,10 @@ class BaseCollectionViewController: UICollectionViewController {
     
     }
     */
-
+    deinit {
+        #if DEBUG
+            debugPrint("deinit \(self.classForCoder)")
+        #else
+        #endif
+    }
 }

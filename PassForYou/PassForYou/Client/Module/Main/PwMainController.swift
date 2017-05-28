@@ -17,8 +17,8 @@ class PwMainController: BaseNavigationViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let ps = PwPasswordController()
-        show(ps, sender: nil)
+        let tt = PwOverViewController()
+        show(tt, sender: nil);
     }
 
     override func didReceiveMemoryWarning() {

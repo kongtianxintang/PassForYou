@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		C21D0AA11ED92A3200A6D900 /* PwDisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D0AA01ED92A3200A6D900 /* PwDisplayManager.swift */; };
+		C21D0AA31ED9328200A6D900 /* PwToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D0AA21ED9328200A6D900 /* PwToast.swift */; };
+		C21D0AAE1ED962E700A6D900 /* Account+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D0AAC1ED962E700A6D900 /* Account+CoreDataClass.swift */; };
+		C21D0AAF1ED962E700A6D900 /* Account+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D0AAD1ED962E700A6D900 /* Account+CoreDataProperties.swift */; };
+		C21D0AB21ED963A500A6D900 /* PwOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D0AB11ED963A500A6D900 /* PwOverViewController.swift */; };
+		C21D0AB61ED96D9A00A6D900 /* PwActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21D0AB51ED96D9A00A6D900 /* PwActionView.swift */; };
 		C2359EB31EC2B1E1009191BD /* PwNumberLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2359EB21EC2B1E1009191BD /* PwNumberLayout.swift */; };
 		C2359EB61EC2C15D009191BD /* PwNumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2359EB41EC2C15D009191BD /* PwNumberCell.swift */; };
 		C2359EB71EC2C15D009191BD /* PwNumberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2359EB51EC2C15D009191BD /* PwNumberCell.xib */; };
@@ -37,6 +42,11 @@
 		76794AF04DC9B3540017FC4F /* Pods_PassForYou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PassForYou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ABEB43BD970A4132E37AAC1 /* Pods-PassForYou.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PassForYou.release.xcconfig"; path = "Pods/Target Support Files/Pods-PassForYou/Pods-PassForYou.release.xcconfig"; sourceTree = "<group>"; };
 		C21D0AA01ED92A3200A6D900 /* PwDisplayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PwDisplayManager.swift; sourceTree = "<group>"; };
+		C21D0AA21ED9328200A6D900 /* PwToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PwToast.swift; sourceTree = "<group>"; };
+		C21D0AAC1ED962E700A6D900 /* Account+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Account+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C21D0AAD1ED962E700A6D900 /* Account+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Account+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C21D0AB11ED963A500A6D900 /* PwOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PwOverViewController.swift; sourceTree = "<group>"; };
+		C21D0AB51ED96D9A00A6D900 /* PwActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PwActionView.swift; sourceTree = "<group>"; };
 		C2359EB21EC2B1E1009191BD /* PwNumberLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PwNumberLayout.swift; sourceTree = "<group>"; };
 		C2359EB41EC2C15D009191BD /* PwNumberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PwNumberCell.swift; sourceTree = "<group>"; };
 		C2359EB51EC2C15D009191BD /* PwNumberCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PwNumberCell.xib; sourceTree = "<group>"; };
@@ -94,6 +104,7 @@
 		C21D0A9E1ED92A1D00A6D900 /* Units */ = {
 			isa = PBXGroup;
 			children = (
+				C21D0AB41ED96D8900A6D900 /* ActionView */,
 				C21D0A9F1ED92A1D00A6D900 /* Manager */,
 			);
 			path = Units;
@@ -103,8 +114,25 @@
 			isa = PBXGroup;
 			children = (
 				C21D0AA01ED92A3200A6D900 /* PwDisplayManager.swift */,
+				C21D0AA21ED9328200A6D900 /* PwToast.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		C21D0AB01ED9637B00A6D900 /* OverView */ = {
+			isa = PBXGroup;
+			children = (
+				C21D0AB11ED963A500A6D900 /* PwOverViewController.swift */,
+			);
+			path = OverView;
+			sourceTree = "<group>";
+		};
+		C21D0AB41ED96D8900A6D900 /* ActionView */ = {
+			isa = PBXGroup;
+			children = (
+				C21D0AB51ED96D9A00A6D900 /* PwActionView.swift */,
+			);
+			path = ActionView;
 			sourceTree = "<group>";
 		};
 		C24B3EF01EC16A1C00008F1C = {
@@ -158,6 +186,7 @@
 		C24B3F231EC1882A00008F1C /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				C21D0AB01ED9637B00A6D900 /* OverView */,
 				C21D0A9E1ED92A1D00A6D900 /* Units */,
 				C24B3F2F1EC18B2F00008F1C /* Main */,
 				C24B3F301EC18B2F00008F1C /* Data */,
@@ -190,6 +219,8 @@
 		C24B3F301EC18B2F00008F1C /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				C21D0AAC1ED962E700A6D900 /* Account+CoreDataClass.swift */,
+				C21D0AAD1ED962E700A6D900 /* Account+CoreDataProperties.swift */,
 				C2D4B2361EC439C40028EA3E /* AppKey+CoreDataClass.swift */,
 				C2D4B2371EC439C40028EA3E /* AppKey+CoreDataProperties.swift */,
 				C2D4B23A1EC43A450028EA3E /* DataBaseProtocol.swift */,
@@ -340,11 +371,16 @@
 			files = (
 				C2359EB61EC2C15D009191BD /* PwNumberCell.swift in Sources */,
 				C24B3F051EC16A1C00008F1C /* PassForYou.xcdatamodeld in Sources */,
+				C21D0AAF1ED962E700A6D900 /* Account+CoreDataProperties.swift in Sources */,
+				C21D0AB61ED96D9A00A6D900 /* PwActionView.swift in Sources */,
+				C21D0AA31ED9328200A6D900 /* PwToast.swift in Sources */,
 				C2359EB31EC2B1E1009191BD /* PwNumberLayout.swift in Sources */,
 				C24B3F331EC18B8B00008F1C /* PwMainController.swift in Sources */,
 				C24B3EFD1EC16A1C00008F1C /* AppDelegate.swift in Sources */,
 				C24B3F2A1EC1888D00008F1C /* BaseTableViewController.swift in Sources */,
+				C21D0AAE1ED962E700A6D900 /* Account+CoreDataClass.swift in Sources */,
 				C21D0AA11ED92A3200A6D900 /* PwDisplayManager.swift in Sources */,
+				C21D0AB21ED963A500A6D900 /* PwOverViewController.swift in Sources */,
 				C2D4B24E1EC57EC30028EA3E /* PwSecureView.swift in Sources */,
 				C2D4B23B1EC43A450028EA3E /* DataBaseProtocol.swift in Sources */,
 				C2D4B2391EC439C40028EA3E /* AppKey+CoreDataProperties.swift in Sources */,
@@ -480,6 +516,7 @@
 				INFOPLIST_FILE = PassForYou/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = mtkj.PassForYou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;

@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16F73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Account" representedClassName="Account" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pw" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="AppKey" representedClassName="AppKey" syncable="YES">
         <attribute name="openid" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="AppKey" positionX="-63" positionY="-18" width="128" height="60"/>
+        <element name="Account" positionX="-63" positionY="-9" width="128" height="75"/>
     </elements>
 </model>

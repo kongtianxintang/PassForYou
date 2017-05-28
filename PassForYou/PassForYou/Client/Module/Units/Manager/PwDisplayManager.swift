@@ -24,7 +24,7 @@ class PwDisplayManager: NSObject {
     
     func displayMain(){
         let root = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "root")
-        UIApplication.shared.keyWindow?.rootViewController = root;
+        UIApplication.shared.keyWindow!.rootViewController = root;
     }
     
 }

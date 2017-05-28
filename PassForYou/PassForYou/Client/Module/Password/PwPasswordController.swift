@@ -98,15 +98,16 @@ class PwPasswordController: BaseViewController ,UICollectionViewDelegate,UIColle
             
             //MARK:与本地的key对比是否相等
             let keys = AppKey.fetchNSManagedObject(className: AppKey.classForCoder(), sortKey: "openid")
-            if nil == keys {  insertAppKey(key: temp) ;return };
+            if nil == keys {
+                insertAppKey(key: temp) ;
+                return
+            };
             if keys!.count <= 0 {   insertAppKey(key: temp) ;return };
             let key = keys![0] as! AppKey
             if nil == key.openid { return };
             if temp == key.openid! {
-                print("相等")
                 PwDisplayManager.shared.displayMain();
             }else{
-                print("不相等")
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.05, execute: {[unowned self] _ in
                     self.descLabel.text = "再试一次";
                     self.secureView.shake();
@@ -162,9 +163,7 @@ class PwPasswordController: BaseViewController ,UICollectionViewDelegate,UIColle
                         let errorCode = laError.code
                         switch errorCode {
                         case .authenticationFailed:
-                            print("验证失败")
-                        case .userCancel:
-                            print("用户取消")
+                            PwToast.showToast(text: "TouchId 验证失败");
                         default:
                             break;
                         }
@@ -175,11 +174,11 @@ class PwPasswordController: BaseViewController ,UICollectionViewDelegate,UIColle
             if let  tError = error as? LAError {
                 switch tError.code {
                 case .touchIDLockout:
-                    print("touch被锁了,请稍等");
+                    PwToast.showToast(text: "TouchId 已锁定 请稍后再试")
                 case .passcodeNotSet:
-                    print("没有录入指纹");
+                    PwToast.showToast(text: "您还没有录入指纹");
                 default:
-                    print("不支持");
+                    PwToast.showToast(text: "设备不支持Touch ID")
                     break;
                 }
             }
@@ -191,6 +190,8 @@ class PwPasswordController: BaseViewController ,UICollectionViewDelegate,UIColle
         if let entity = AppKey.createEntity(className: AppKey.classForCoder()) as? AppKey {
             entity.openid = key;
             AppKey.insert(object: entity)
+            PwToast.showToast(text: "设置密码成功");
+            PwDisplayManager.shared.displayMain();
         }else{
             assertionFailure("创建APPkey失败")
         }

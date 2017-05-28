@@ -4,5 +4,6 @@ use_frameworks!
 target 'PassForYou' do
 
     pod 'SnapKit'
+    pod 'Toaster'
 
 end
