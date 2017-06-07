@@ -80,6 +80,7 @@
 		D05B14231EE6B11400E9807E /* PwDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PwDetailController.swift; sourceTree = "<group>"; };
 		D05B14271EE7978100E9807E /* PwOverViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PwOverViewCell.swift; sourceTree = "<group>"; };
 		D05B14281EE7978100E9807E /* PwOverViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PwOverViewCell.xib; sourceTree = "<group>"; };
+		D05B142B1EE7FF0300E9807E /* PassForYou.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PassForYou.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +169,7 @@
 		C24B3EFB1EC16A1C00008F1C /* PassForYou */ = {
 			isa = PBXGroup;
 			children = (
+				D05B142B1EE7FF0300E9807E /* PassForYou.entitlements */,
 				C24B3F211EC1882A00008F1C /* Client */,
 				C24B3EFC1EC16A1C00008F1C /* AppDelegate.swift */,
 				C24B3F001EC16A1C00008F1C /* Main.storyboard */,
@@ -309,8 +311,13 @@
 				TargetAttributes = {
 					C24B3EF81EC16A1C00008F1C = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = LKFND4C422;
+						DevelopmentTeam = 2ZFXAM34VY;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -548,12 +555,12 @@
 			baseConfigurationReference = 2E8EA76DC2F621130BF39B00 /* Pods-PassForYou.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = LKFND4C422;
+				DEVELOPMENT_TEAM = 2ZFXAM34VY;
 				INFOPLIST_FILE = PassForYou/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = mtkj.PassForYou;
+				PRODUCT_BUNDLE_IDENTIFIER = com.liwei.password;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -564,11 +571,11 @@
 			baseConfigurationReference = 9ABEB43BD970A4132E37AAC1 /* Pods-PassForYou.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = LKFND4C422;
+				DEVELOPMENT_TEAM = 2ZFXAM34VY;
 				INFOPLIST_FILE = PassForYou/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = mtkj.PassForYou;
+				PRODUCT_BUNDLE_IDENTIFIER = com.liwei.password;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
