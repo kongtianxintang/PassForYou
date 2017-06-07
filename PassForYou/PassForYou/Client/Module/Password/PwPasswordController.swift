@@ -120,6 +120,18 @@ class PwPasswordController: BaseViewController ,UICollectionViewDelegate,UIColle
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) else { return };
+        let transiton = CATransition.init();
+        transiton.type = "rippleEffect";
+        transiton.duration = 0.5;
+        transiton.repeatCount = 1;
+        cell.contentView.layer.add(transiton, forKey: "transition");
+    }
+    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+        
+    }
+    
     //MARK:UISegmentedControl相关
     @IBAction func didClickSegmentedControl(_ sender: UISegmentedControl) {
         let index = sender.selectedSegmentIndex;
