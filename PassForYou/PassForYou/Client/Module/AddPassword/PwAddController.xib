@@ -80,7 +80,7 @@
                     </connections>
                 </textView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="备注:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xac-yI-H6D">
-                    <rect key="frame" x="52" y="373.5" width="35" height="18"/>
+                    <rect key="frame" x="52" y="381.5" width="35" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -97,7 +97,7 @@
                 <constraint firstItem="It1-rb-NKi" firstAttribute="top" secondItem="hVh-iH-Vtf" secondAttribute="bottom" constant="22" id="LqA-BS-Q0G"/>
                 <constraint firstItem="hVh-iH-Vtf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="44" id="MVl-g9-5bO"/>
                 <constraint firstItem="hVh-iH-Vtf" firstAttribute="top" secondItem="ntz-42-woQ" secondAttribute="bottom" constant="22" id="Nzp-g5-Tvg"/>
-                <constraint firstItem="xac-yI-H6D" firstAttribute="top" secondItem="BFh-nT-lJ9" secondAttribute="top" id="PhM-kh-Q0d"/>
+                <constraint firstItem="xac-yI-H6D" firstAttribute="top" secondItem="BFh-nT-lJ9" secondAttribute="top" constant="8" id="PhM-kh-Q0d"/>
                 <constraint firstItem="Inn-ry-bPH" firstAttribute="trailing" secondItem="ntz-42-woQ" secondAttribute="trailing" id="YJQ-Al-gtH"/>
                 <constraint firstItem="xac-yI-H6D" firstAttribute="leading" secondItem="BFh-nT-lJ9" secondAttribute="leading" constant="8" id="YOv-UC-1BX"/>
                 <constraint firstItem="BFh-nT-lJ9" firstAttribute="leading" secondItem="It1-rb-NKi" secondAttribute="leading" id="bEj-0b-GT6"/>
