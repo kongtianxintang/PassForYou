@@ -3,22 +3,24 @@
  * Copyright(C),lisir, LTD.All rights reserved.
  * project:
  * Author:lisir
- * Date:  17/05/27
- * QQ/Tel/Mail:
- * Description:程序提示
+ * Date:  17/06/07
+ * QQ/Tel/Mail:383118832
+ * Description:
  * Others:
  * Modifier:
  * Reason:
  **********************************************************************************/
 
 import UIKit
-import Toaster
 
-class PwToast {
-    
-    class func showToast(text:String?){
-        let t = Toast.init(text:text , delay: 0, duration: 2);
-        t.show();
+class PwOverViewCell: UITableViewCell {
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
 
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
+    
 }

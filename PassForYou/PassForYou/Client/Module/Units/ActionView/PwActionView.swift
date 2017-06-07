@@ -64,7 +64,7 @@ class PwActionView: UIView {
             make.bottom.equalToSuperview();
             make.right.equalToSuperview();
         }
-//        email.isHidden = true;
+        email.isHidden = true;
         email.addTarget(self, action: #selector(emailAction(_:)), for: .touchDown);
         
         account.setImage(UIImage.init(named: "account"), for: .normal);
@@ -110,8 +110,8 @@ class PwActionView: UIView {
         let startPoint = add.center;
         
         let p1 = createPoint(0);
-        let p2 = createPoint(Double.pi / 6 * 2);
-        let p3 = createPoint(Double.pi / 2);
+//        let p2 = createPoint(Double.pi / 6 * 2);
+//        let p3 = createPoint(Double.pi / 2);
         
         let ani = CABasicAnimation();
         ani.keyPath = "transform.translation"

@@ -31,7 +31,7 @@ extension NSManagedObject:DBProtocol {
                     context.delete(tObject)
                 }
             }
-            coreDataSave();
+            coreDataSave(with: nil);
         }
     }
     
@@ -39,7 +39,7 @@ extension NSManagedObject:DBProtocol {
     static func delete(object:NSManagedObject){
         guard let context = returnContext() else {assertionFailure("context 为 空");return};
             context.delete(object)
-            coreDataSave();
+        coreDataSave(with: nil);
     }
     
     //MARK:查询
@@ -61,22 +61,35 @@ extension NSManagedObject:DBProtocol {
     
     //MARK:更新
     static func update(){
-        coreDataSave();
+        coreDataSave(with: nil);
     }
     
     //MARK:保存
-    static func coreDataSave(){
+    static func coreDataSave(with completeHandle:((_ isSave:Bool)->Void)?){
         if let delegate = UIApplication.shared.delegate as? AppDelegate {
-            delegate.saveContext();
+            let context = delegate.persistentContainer.viewContext;
+            if context.hasChanges {
+                do {
+                    try context.save();
+                    if completeHandle != nil {
+                        completeHandle!(true);
+                    }
+                } catch  {
+                    if completeHandle != nil {
+                        completeHandle!(false);
+                    }
+                    assertionFailure("数据库保存失败");
+                }
+            }
         }
     }
     
     //MARK:插入
     static func insert(object:NSManagedObject){
-        coreDataSave();
+        coreDataSave(with: nil);
     }
     
-    private class func returnContext()->NSManagedObjectContext?{
+    class func returnContext()->NSManagedObjectContext?{
         if let delegate = UIApplication.shared.delegate as? AppDelegate {
             let context = delegate.persistentContainer.viewContext
             return context;

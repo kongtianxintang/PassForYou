@@ -12,6 +12,7 @@
  **********************************************************************************/
 import UIKit
 import LocalAuthentication
+import Hero
 
 class PwPasswordController: BaseViewController ,UICollectionViewDelegate,UICollectionViewDataSource{
 
@@ -55,6 +56,7 @@ class PwPasswordController: BaseViewController ,UICollectionViewDelegate,UIColle
             return;
         };
         descLabel.text = "输入4位数作为开启程序的密码"
+        collectionview.heroModifiers = [.cascade];
     }
     
     //MARK:collectionview相关
@@ -82,6 +84,7 @@ class PwPasswordController: BaseViewController ,UICollectionViewDelegate,UIColle
         let info = numbers[indexPath.row]
         let text = "\(info)"
         cell.label.text = text;
+        cell.heroModifiers = [.fade,.scale(0.5)];
         return cell;
     }
     
@@ -156,14 +159,18 @@ class PwPasswordController: BaseViewController ,UICollectionViewDelegate,UIColle
         if isCan {
             context.evaluatePolicy(LAPolicy.deviceOwnerAuthentication, localizedReason: desc, reply: { (success:Bool, err:Error?) in
                 if success {
-                    //MARK:验证成功
-                    PwDisplayManager.shared.displayMain();
+                    //MARK:验证成功 ⚠️要放在主线程
+                    DispatchQueue.main.async {
+                        PwDisplayManager.shared.displayMain();
+                    }
                 }else{
                     if let laError = err as? LAError {
                         let errorCode = laError.code
                         switch errorCode {
                         case .authenticationFailed:
                             PwToast.showToast(text: "TouchId 验证失败");
+                        case .userCancel:
+                            PwToast.showToast(text: "您已取消Touch ID 验证")
                         default:
                             break;
                         }

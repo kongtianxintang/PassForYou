@@ -13,7 +13,7 @@
 
 import Foundation
 import CoreData
-
+import UIKit
 
 extension Account {
 
@@ -23,10 +23,38 @@ extension Account {
 
     @NSManaged public var id: String?//账号名称
     @NSManaged public var pw: String?//密码
+    @NSManaged public var company:String?//所注册的网站
+    @NSManaged public var desc:String?//备注
     
     public override func awakeFromInsert() {
-        id = "test"
-        pw = "test"
+        id = "Unkonw"
+        pw = "Unkonw"
+        company = "Unkonw"
+        desc = "Unkonw"
+    }
+    public override func awakeFromFetch() {
+        if nil == id {
+            id = "Unkonw"
+        }
+        if nil == pw {
+            pw = "Unkonw"
+        }
+        if nil == company {
+            company = "Unkonw"
+        }
+        if nil == desc {
+            desc = "Unkonw";
+        }
     }
 
+    //MARK:获取富文本
+    func getComAttributed()->NSAttributedString{
+    
+        let normal = [NSFontAttributeName:UIFont.systemFont(ofSize: 17),NSForegroundColorAttributeName:UIColor.darkGray];
+        let min = [NSForegroundColorAttributeName:UIColor.gray,NSFontAttributeName:UIFont.systemFont(ofSize: 12)];
+        let com = NSMutableAttributedString.init(string: company!, attributes: normal);
+        let name = NSAttributedString.init(string: "\n" + id!, attributes: min);
+        com.append(name)
+        return com;
+    }
 }

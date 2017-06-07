@@ -35,6 +35,11 @@
 		C2D4B24E1EC57EC30028EA3E /* PwSecureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D4B24D1EC57EC30028EA3E /* PwSecureView.swift */; };
 		C2D4B2501EC5BB730028EA3E /* PwPasswordController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2D4B24F1EC5BB730028EA3E /* PwPasswordController.xib */; };
 		C45B853093D29AFC40E026F8 /* Pods_PassForYou.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76794AF04DC9B3540017FC4F /* Pods_PassForYou.framework */; };
+		D014F3791EDEB814003CF584 /* PwAddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D014F3771EDEB814003CF584 /* PwAddController.swift */; };
+		D014F37A1EDEB814003CF584 /* PwAddController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D014F3781EDEB814003CF584 /* PwAddController.xib */; };
+		D05B14251EE6B11400E9807E /* PwDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05B14231EE6B11400E9807E /* PwDetailController.swift */; };
+		D05B14291EE7978100E9807E /* PwOverViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05B14271EE7978100E9807E /* PwOverViewCell.swift */; };
+		D05B142A1EE7978100E9807E /* PwOverViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D05B14281EE7978100E9807E /* PwOverViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +75,11 @@
 		C2D4B24B1EC457A90028EA3E /* ExtensionCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionCoreData.swift; sourceTree = "<group>"; };
 		C2D4B24D1EC57EC30028EA3E /* PwSecureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PwSecureView.swift; sourceTree = "<group>"; };
 		C2D4B24F1EC5BB730028EA3E /* PwPasswordController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PwPasswordController.xib; sourceTree = "<group>"; };
+		D014F3771EDEB814003CF584 /* PwAddController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PwAddController.swift; sourceTree = "<group>"; };
+		D014F3781EDEB814003CF584 /* PwAddController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PwAddController.xib; sourceTree = "<group>"; };
+		D05B14231EE6B11400E9807E /* PwDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PwDetailController.swift; sourceTree = "<group>"; };
+		D05B14271EE7978100E9807E /* PwOverViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PwOverViewCell.swift; sourceTree = "<group>"; };
+		D05B14281EE7978100E9807E /* PwOverViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PwOverViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				C21D0AB11ED963A500A6D900 /* PwOverViewController.swift */,
+				D05B14271EE7978100E9807E /* PwOverViewCell.swift */,
+				D05B14281EE7978100E9807E /* PwOverViewCell.xib */,
 			);
 			path = OverView;
 			sourceTree = "<group>";
@@ -186,6 +198,8 @@
 		C24B3F231EC1882A00008F1C /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				D05B14221EE6B0FF00E9807E /* AccountDetail */,
+				D014F3761EDEB7F2003CF584 /* AddPassword */,
 				C21D0AB01ED9637B00A6D900 /* OverView */,
 				C21D0A9E1ED92A1D00A6D900 /* Units */,
 				C24B3F2F1EC18B2F00008F1C /* Main */,
@@ -240,6 +254,23 @@
 				C2D4B24D1EC57EC30028EA3E /* PwSecureView.swift */,
 			);
 			path = Password;
+			sourceTree = "<group>";
+		};
+		D014F3761EDEB7F2003CF584 /* AddPassword */ = {
+			isa = PBXGroup;
+			children = (
+				D014F3771EDEB814003CF584 /* PwAddController.swift */,
+				D014F3781EDEB814003CF584 /* PwAddController.xib */,
+			);
+			path = AddPassword;
+			sourceTree = "<group>";
+		};
+		D05B14221EE6B0FF00E9807E /* AccountDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D05B14231EE6B11400E9807E /* PwDetailController.swift */,
+			);
+			path = AccountDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +339,8 @@
 			files = (
 				C2359EB71EC2C15D009191BD /* PwNumberCell.xib in Resources */,
 				C2D4B2501EC5BB730028EA3E /* PwPasswordController.xib in Resources */,
+				D014F37A1EDEB814003CF584 /* PwAddController.xib in Resources */,
+				D05B142A1EE7978100E9807E /* PwOverViewCell.xib in Resources */,
 				C24B3F0A1EC16A1C00008F1C /* LaunchScreen.storyboard in Resources */,
 				C24B3F071EC16A1C00008F1C /* Assets.xcassets in Resources */,
 				C24B3F021EC16A1C00008F1C /* Main.storyboard in Resources */,
@@ -359,7 +392,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -380,11 +413,14 @@
 				C24B3F2A1EC1888D00008F1C /* BaseTableViewController.swift in Sources */,
 				C21D0AAE1ED962E700A6D900 /* Account+CoreDataClass.swift in Sources */,
 				C21D0AA11ED92A3200A6D900 /* PwDisplayManager.swift in Sources */,
+				D014F3791EDEB814003CF584 /* PwAddController.swift in Sources */,
 				C21D0AB21ED963A500A6D900 /* PwOverViewController.swift in Sources */,
 				C2D4B24E1EC57EC30028EA3E /* PwSecureView.swift in Sources */,
 				C2D4B23B1EC43A450028EA3E /* DataBaseProtocol.swift in Sources */,
 				C2D4B2391EC439C40028EA3E /* AppKey+CoreDataProperties.swift in Sources */,
 				C24B3F261EC1887100008F1C /* BaseViewController.swift in Sources */,
+				D05B14251EE6B11400E9807E /* PwDetailController.swift in Sources */,
+				D05B14291EE7978100E9807E /* PwOverViewCell.swift in Sources */,
 				C24B3F281EC1887F00008F1C /* BaseCollectionViewController.swift in Sources */,
 				C24B3F2E1EC188BD00008F1C /* BaseNavigationViewController.swift in Sources */,
 				C2D4B24C1EC457A90028EA3E /* ExtensionCoreData.swift in Sources */,
