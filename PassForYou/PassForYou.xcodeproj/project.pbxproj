@@ -80,7 +80,6 @@
 		D05B14231EE6B11400E9807E /* PwDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PwDetailController.swift; sourceTree = "<group>"; };
 		D05B14271EE7978100E9807E /* PwOverViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PwOverViewCell.swift; sourceTree = "<group>"; };
 		D05B14281EE7978100E9807E /* PwOverViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PwOverViewCell.xib; sourceTree = "<group>"; };
-		D05B142B1EE7FF0300E9807E /* PassForYou.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PassForYou.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,7 +168,6 @@
 		C24B3EFB1EC16A1C00008F1C /* PassForYou */ = {
 			isa = PBXGroup;
 			children = (
-				D05B142B1EE7FF0300E9807E /* PassForYou.entitlements */,
 				C24B3F211EC1882A00008F1C /* Client */,
 				C24B3EFC1EC16A1C00008F1C /* AppDelegate.swift */,
 				C24B3F001EC16A1C00008F1C /* Main.storyboard */,
