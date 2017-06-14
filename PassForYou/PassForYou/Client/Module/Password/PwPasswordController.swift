@@ -12,7 +12,7 @@
  **********************************************************************************/
 import UIKit
 import LocalAuthentication
-import Hero
+
 
 class PwPasswordController: BaseViewController ,UICollectionViewDelegate,UICollectionViewDataSource{
 
@@ -56,7 +56,6 @@ class PwPasswordController: BaseViewController ,UICollectionViewDelegate,UIColle
             return;
         };
         descLabel.text = "输入4位数作为开启程序的密码"
-        collectionview.heroModifiers = [.cascade];
     }
     
     //MARK:collectionview相关
@@ -84,7 +83,6 @@ class PwPasswordController: BaseViewController ,UICollectionViewDelegate,UIColle
         let info = numbers[indexPath.row]
         let text = "\(info)"
         cell.label.text = text;
-        cell.heroModifiers = [.fade,.scale(0.5)];
         return cell;
     }
     
