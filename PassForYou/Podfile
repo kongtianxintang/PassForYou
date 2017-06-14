@@ -5,7 +5,6 @@ target 'PassForYou' do
 
     pod 'SnapKit'
     pod 'Toaster'
-    pod 'Hero'
     pod 'IQKeyboardManagerSwift'
 
 end
