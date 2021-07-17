@@ -60,7 +60,7 @@ class PwAddController: BaseViewController,UITextViewDelegate{
                 entity.id = ac;
                 entity.pw = pw;
                 entity.company = com;
-                if let  descStr = desc.text , desc.text.characters.count > 0 {
+                if let  descStr = desc.text , desc.text.count > 0 {
                     entity.desc = descStr;
                 }
                 Account.coreDataSave(with: {[unowned self](isSave:Bool) in
@@ -82,7 +82,7 @@ class PwAddController: BaseViewController,UITextViewDelegate{
     
     func checkPassword()->Bool{
         if let text = password.text {
-            if text.characters.count > 0 {
+            if text.count > 0 {
                 return true;
             }
         }
@@ -92,7 +92,7 @@ class PwAddController: BaseViewController,UITextViewDelegate{
 
     func checkAccount()->Bool{
         if let text = account.text {
-            if text.characters.count > 0 {
+            if text.count > 0 {
                 return true;
             }
         }
@@ -102,7 +102,7 @@ class PwAddController: BaseViewController,UITextViewDelegate{
     
     func checkCompany()->Bool{
         if let text = company.text {
-            if text.characters.count > 0 {
+            if text.count > 0 {
                 return true;
             }
         }
@@ -119,7 +119,7 @@ class PwAddController: BaseViewController,UITextViewDelegate{
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if let text = textView.text{
-            if text.characters.count > 0 {
+            if text.count > 0 {
                 mark.isHidden = true;
             }else{
                 mark.isHidden = false;

@@ -50,7 +50,7 @@ class PwOverViewController: BaseTableViewController {
         navigationItem.rightBarButtonItem = right;
     }
     //MARK:right action
-    func rightAction(){
+    @objc private func rightAction(){
         let add = PwAddController();
         add.addBlock = {[unowned self](ac:Account)->Void in
             let newindex = IndexPath.init(row: self.dataSource.count, section: 0)

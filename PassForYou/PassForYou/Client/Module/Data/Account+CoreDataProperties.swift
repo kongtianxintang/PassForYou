@@ -50,8 +50,8 @@ extension Account {
     //MARK:获取富文本
     func getComAttributed()->NSAttributedString{
     
-        let normal = [NSFontAttributeName:UIFont.systemFont(ofSize: 17),NSForegroundColorAttributeName:UIColor.darkGray];
-        let min = [NSForegroundColorAttributeName:UIColor.gray,NSFontAttributeName:UIFont.systemFont(ofSize: 12)];
+        let normal: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 17, weight: .regular),.foregroundColor: UIColor.darkGray]
+        let min: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 12, weight: .regular),.foregroundColor: UIColor.gray]
         let com = NSMutableAttributedString.init(string: company!, attributes: normal);
         let name = NSAttributedString.init(string: "\n" + id!, attributes: min);
         com.append(name)

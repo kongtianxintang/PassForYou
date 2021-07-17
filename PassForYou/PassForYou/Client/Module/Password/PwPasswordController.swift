@@ -90,12 +90,12 @@ class PwPasswordController: BaseViewController ,UICollectionViewDelegate,UIColle
         let info = numbers[indexPath.row]
         let str = "\(info)"
         let text = secureView.secureStr;
-        if nil == text {   secureView.secureStr = str ; return; };
+        if nil == text {   secureView.secureStr = str ; return };
         let temp = text! + str;
-        if temp.characters.count > secureView.limit { return; }
+        if temp.count > secureView.limit { return}
         secureView.secureStr = temp;
         
-        if temp.characters.count == secureView.limit {
+        if temp.count == secureView.limit {
             
             //MARK:与本地的key对比是否相等
             let keys = AppKey.fetchNSManagedObject(className: AppKey.classForCoder(), sortKey: "openid")
@@ -109,19 +109,19 @@ class PwPasswordController: BaseViewController ,UICollectionViewDelegate,UIColle
             if temp == key.openid! {
                 PwDisplayManager.shared.displayMain();
             }else{
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.05, execute: {[unowned self] _ in
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {[unowned self]  in
                     self.descLabel.text = "再试一次";
                     self.secureView.shake();
                     self.secureView.reClearAll();
-                })
+                }
             }
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) else { return };
-        let transiton = CATransition.init();
-        transiton.type = "rippleEffect";
+        
+        let transiton = CATransition.init()
         transiton.duration = 0.5;
         transiton.repeatCount = 1;
         cell.contentView.layer.add(transiton, forKey: "transition");

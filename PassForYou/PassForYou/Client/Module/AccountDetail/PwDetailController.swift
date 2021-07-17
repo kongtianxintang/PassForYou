@@ -53,7 +53,7 @@ class PwDetailController: PwAddController {
                 ac!.pw = pw;
                 ac!.id = acstr
                 ac!.company = com
-                if let temp = desc.text , desc.text.characters.count > 0{
+                if let temp = desc.text , desc.text.count > 0{
                     ac!.desc = temp;
                 }
                 Account.coreDataSave(with: { [unowned self](isSave:Bool) in

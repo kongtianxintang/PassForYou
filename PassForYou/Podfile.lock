@@ -1,18 +1,24 @@
 PODS:
-  - IQKeyboardManagerSwift (4.0.9)
-  - SnapKit (3.2.0)
-  - Toaster (2.0.3)
+  - IQKeyboardManagerSwift (6.5.6)
+  - SnapKit (5.0.1)
+  - Toaster (2.3.0)
 
 DEPENDENCIES:
   - IQKeyboardManagerSwift
   - SnapKit
   - Toaster
 
+SPEC REPOS:
+  trunk:
+    - IQKeyboardManagerSwift
+    - SnapKit
+    - Toaster
+
 SPEC CHECKSUMS:
-  IQKeyboardManagerSwift: 2eefe6c429b86aa08bfbc1b5c891164d754adf91
-  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
-  Toaster: 77c0b03d78e680bbbab0071c9c7ee392b0034010
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  Toaster: c3473963c78e8cabbf6ea6f11ad0fdaae6f54987
 
 PODFILE CHECKSUM: 291337ea6ebcd5af4e7a29b5317a99b6f0058dde
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.10.0

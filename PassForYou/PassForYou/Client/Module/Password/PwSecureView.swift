@@ -22,7 +22,7 @@ class PwSecureView: UIView {
     var secureStr:String?{
         didSet{
             guard let temp = secureStr else { return };
-            let count = temp.characters.count;
+            let count = temp.count;
             let index = count - 1;
             resetFillColor(index: index, clearOrSet: false)
         }
