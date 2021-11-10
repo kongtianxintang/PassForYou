@@ -22,14 +22,16 @@ class PwOverViewController: BaseTableViewController {
         }
         return Array<Account>();
     }()
+    private lazy var mMenuView = THTabbarMenu()
+    private var mSearchVC: UISearchController?
     
     private var fetchController:NSFetchedResultsController<NSFetchRequestResult>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "总览";
-        configTableview();
-        configAddButtonItem();
+        title = "总览"
+        configTableview()
+        configureMenuView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,6 +53,11 @@ class PwOverViewController: BaseTableViewController {
     }
     //MARK:right action
     @objc private func rightAction(){
+        showAddController()
+    }
+    
+    // MARK: - 添加
+    private func showAddController() {
         let add = PwAddController();
         add.addBlock = {[unowned self](ac:Account)->Void in
             let newindex = IndexPath.init(row: self.dataSource.count, section: 0)
@@ -81,9 +88,7 @@ class PwOverViewController: BaseTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let ac = dataSource[indexPath.row];
-        let detail = PwDetailController();
-        detail.ac = ac;
-        show(detail, sender: nil);
+        showAccountDetail(ac)
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -107,5 +112,83 @@ class PwOverViewController: BaseTableViewController {
         }
         return [del];
     }
+}
+
+//MARK: mMenuView
+extension PwOverViewController: THTabbarMenuDelegate {
     
+    func menuViewDidClick(_ alignment: THMenuLoaderAlignment, _ menu: THTabbarMenu) {
+        switch alignment {
+        case .Left:
+            pushSearchController()
+        default:
+            showAddController()
+        }
+        
+    }
+    
+    private func configureMenuView() {
+        view.addSubview(mMenuView)
+        mMenuView.delegate = self
+        mMenuView.translatesAutoresizingMaskIntoConstraints = false
+        let bottom = mMenuView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -24)
+        let centerX = mMenuView.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0)
+        let width = mMenuView.widthAnchor.constraint(equalToConstant: 240)
+        let height = mMenuView.heightAnchor.constraint(equalToConstant: 54)
+        view.addConstraints([bottom,centerX])
+        mMenuView.addConstraints([width,height])
+    }
+    
+    //MARK: 显示密码的详情页
+    private func showAccountDetail(_ ac: Account){
+        let detail = PwDetailController();
+        detail.ac = ac;
+        show(detail, sender: nil);
+    }
+}
+
+//MARK: 搜索
+extension PwOverViewController: UISearchControllerDelegate,UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text, text.count > 0 else {
+            return
+        }
+        guard let vc = searchController.searchResultsController as? PwResultViewController else {
+            return
+        }
+        let filter =  dataSource.filter { obj in
+            if let company = obj.company, company.contains(text) {
+                return true
+            }
+            if let name = obj.id, name.contains(text) {
+                return true
+            }
+            return false
+        }
+        vc.setData(filter)
+    }
+    
+    func didDismissSearchController(_ searchController: UISearchController) {
+        mSearchVC = nil
+    }
+    
+    private func pushSearchController() {
+        let vc = PwResultViewController()
+        vc.delegate = self
+        let searchVC = UISearchController.init(searchResultsController: vc)
+        searchVC.delegate = self
+        searchVC.searchResultsUpdater = self
+        mSearchVC = searchVC
+        present(searchVC, animated: true, completion: nil)
+    }
+}
+
+extension PwOverViewController: PwResultViewControllerDelegate {
+    func resultsControllerDidSelect(_ account: Account) {
+        mSearchVC?.dismiss(animated: true, completion: {[weak self] in
+            self?.showAccountDetail(account)
+            self?.mSearchVC = nil
+        })
+    }
 }

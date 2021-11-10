@@ -25,7 +25,7 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        automaticallyAdjustsScrollViewInsets = false;
+//        automaticallyAdjustsScrollViewInsets = false;
     }
     
     override func didReceiveMemoryWarning() {

@@ -40,6 +40,12 @@
 		D05B14251EE6B11400E9807E /* PwDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05B14231EE6B11400E9807E /* PwDetailController.swift */; };
 		D05B14291EE7978100E9807E /* PwOverViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05B14271EE7978100E9807E /* PwOverViewCell.swift */; };
 		D05B142A1EE7978100E9807E /* PwOverViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D05B14281EE7978100E9807E /* PwOverViewCell.xib */; };
+		D098A3DB273BAAF30032F5AB /* PwResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D098A3DA273BAAF30032F5AB /* PwResultViewController.swift */; };
+		D098A3DE273BAF6D0032F5AB /* THTabbarMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D098A3DD273BAF6D0032F5AB /* THTabbarMenu.swift */; };
+		D098A3E0273BAF740032F5AB /* THMenuLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D098A3DF273BAF740032F5AB /* THMenuLoaderView.swift */; };
+		D098A3E2273BB3BF0032F5AB /* THCellRadiusType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D098A3E1273BB3BF0032F5AB /* THCellRadiusType.swift */; };
+		D098A3E4273BB3C60032F5AB /* THViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D098A3E3273BB3C60032F5AB /* THViewExtension.swift */; };
+		D098A3E6273BB3D20032F5AB /* THFloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D098A3E5273BB3D20032F5AB /* THFloatExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +86,12 @@
 		D05B14231EE6B11400E9807E /* PwDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PwDetailController.swift; sourceTree = "<group>"; };
 		D05B14271EE7978100E9807E /* PwOverViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PwOverViewCell.swift; sourceTree = "<group>"; };
 		D05B14281EE7978100E9807E /* PwOverViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PwOverViewCell.xib; sourceTree = "<group>"; };
+		D098A3DA273BAAF30032F5AB /* PwResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PwResultViewController.swift; sourceTree = "<group>"; };
+		D098A3DD273BAF6D0032F5AB /* THTabbarMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THTabbarMenu.swift; sourceTree = "<group>"; };
+		D098A3DF273BAF740032F5AB /* THMenuLoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THMenuLoaderView.swift; sourceTree = "<group>"; };
+		D098A3E1273BB3BF0032F5AB /* THCellRadiusType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THCellRadiusType.swift; sourceTree = "<group>"; };
+		D098A3E3273BB3C60032F5AB /* THViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THViewExtension.swift; sourceTree = "<group>"; };
+		D098A3E5273BB3D20032F5AB /* THFloatExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = THFloatExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +203,7 @@
 		C24B3F221EC1882A00008F1C /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				D098A3DC273BAF610032F5AB /* View */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -198,6 +211,7 @@
 		C24B3F231EC1882A00008F1C /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				D098A3D9273BAACA0032F5AB /* Search */,
 				D05B14221EE6B0FF00E9807E /* AccountDetail */,
 				D014F3761EDEB7F2003CF584 /* AddPassword */,
 				C21D0AB01ED9637B00A6D900 /* OverView */,
@@ -271,6 +285,26 @@
 				D05B14231EE6B11400E9807E /* PwDetailController.swift */,
 			);
 			path = AccountDetail;
+			sourceTree = "<group>";
+		};
+		D098A3D9273BAACA0032F5AB /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				D098A3DA273BAAF30032F5AB /* PwResultViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		D098A3DC273BAF610032F5AB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D098A3E5273BB3D20032F5AB /* THFloatExtension.swift */,
+				D098A3E3273BB3C60032F5AB /* THViewExtension.swift */,
+				D098A3E1273BB3BF0032F5AB /* THCellRadiusType.swift */,
+				D098A3DF273BAF740032F5AB /* THMenuLoaderView.swift */,
+				D098A3DD273BAF6D0032F5AB /* THTabbarMenu.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,10 +436,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D098A3E0273BAF740032F5AB /* THMenuLoaderView.swift in Sources */,
 				C2359EB61EC2C15D009191BD /* PwNumberCell.swift in Sources */,
 				C24B3F051EC16A1C00008F1C /* PassForYou.xcdatamodeld in Sources */,
 				C21D0AAF1ED962E700A6D900 /* Account+CoreDataProperties.swift in Sources */,
+				D098A3E6273BB3D20032F5AB /* THFloatExtension.swift in Sources */,
 				C21D0AB61ED96D9A00A6D900 /* PwActionView.swift in Sources */,
+				D098A3DE273BAF6D0032F5AB /* THTabbarMenu.swift in Sources */,
 				C21D0AA31ED9328200A6D900 /* PwToast.swift in Sources */,
 				C2359EB31EC2B1E1009191BD /* PwNumberLayout.swift in Sources */,
 				C24B3F331EC18B8B00008F1C /* PwMainController.swift in Sources */,
@@ -414,14 +451,17 @@
 				C21D0AAE1ED962E700A6D900 /* Account+CoreDataClass.swift in Sources */,
 				C21D0AA11ED92A3200A6D900 /* PwDisplayManager.swift in Sources */,
 				D014F3791EDEB814003CF584 /* PwAddController.swift in Sources */,
+				D098A3E4273BB3C60032F5AB /* THViewExtension.swift in Sources */,
 				C21D0AB21ED963A500A6D900 /* PwOverViewController.swift in Sources */,
 				C2D4B24E1EC57EC30028EA3E /* PwSecureView.swift in Sources */,
 				C2D4B23B1EC43A450028EA3E /* DataBaseProtocol.swift in Sources */,
 				C2D4B2391EC439C40028EA3E /* AppKey+CoreDataProperties.swift in Sources */,
+				D098A3DB273BAAF30032F5AB /* PwResultViewController.swift in Sources */,
 				C24B3F261EC1887100008F1C /* BaseViewController.swift in Sources */,
 				D05B14251EE6B11400E9807E /* PwDetailController.swift in Sources */,
 				D05B14291EE7978100E9807E /* PwOverViewCell.swift in Sources */,
 				C24B3F281EC1887F00008F1C /* BaseCollectionViewController.swift in Sources */,
+				D098A3E2273BB3BF0032F5AB /* THCellRadiusType.swift in Sources */,
 				C24B3F2E1EC188BD00008F1C /* BaseNavigationViewController.swift in Sources */,
 				C2D4B24C1EC457A90028EA3E /* ExtensionCoreData.swift in Sources */,
 				C24B3F361EC18C4800008F1C /* PwPasswordController.swift in Sources */,
@@ -552,10 +592,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CZ38J5GQJ9;
 				INFOPLIST_FILE = PassForYou/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = com.liwei.password;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xrx.ios.password;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -568,9 +609,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CZ38J5GQJ9;
 				INFOPLIST_FILE = PassForYou/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.liwei.password;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xrx.ios.password;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};

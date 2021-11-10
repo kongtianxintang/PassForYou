@@ -17,8 +17,7 @@ class PwMainController: BaseNavigationViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tt = PwOverViewController()
-        show(tt, sender: nil);
+       
     }
 
     override func didReceiveMemoryWarning() {
